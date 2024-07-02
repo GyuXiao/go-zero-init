@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2e14608c-2611-4401-ac81-6953c5cb9a93" name="Changes" comment="feat: 1,完善 gyu-api-backend 项目的调用接口逻辑" />
+    <list default="true" id="2e14608c-2611-4401-ac81-6953c5cb9a93" name="Changes" comment="feat: 1,完善 gyu-api-backend 项目的调用接口逻辑">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,7 +29,7 @@
   </component>
   <component name="GOROOT" url="file://$PROJECT_DIR$/../../Go" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../third_go/pkg/mod/github.com/!gyu!xiao/gyu-api-sdk@v0.0.4/sdk/client.go" root0="SKIP_INSPECTION" />
@@ -42,7 +45,7 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2e5e6xPdSWUMq8zfe2o8vfsCD7M" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -190,6 +193,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
     <MESSAGE value="feat: 1,前端和后端项目补充接口信息的新增，更新，删除逻辑" />
     <MESSAGE value="feat: 1,补充调用接口 SDK 包; 2,补充模拟接口项目" />
     <MESSAGE value="feat: 1,前端补充接口信息页和接口详细页; 2,后端补充根据 id 查找 interfaceInfo 信息的接口; 3,补充接口上线和下线功能" />
