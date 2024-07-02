@@ -72,33 +72,6 @@ const (
 	AccessKeyNotExistError     uint32 = 500011
 )
 
-// InterfaceInfo
-const (
-	SearchInterfaceInfoPageListError   uint32 = 700001
-	SearchInterfaceInfoError           uint32 = 700002
-	AddInterfaceInfoError              uint32 = 700002
-	UpdateInterfaceInfoError           uint32 = 700003
-	DeleteInterfaceInfoError           uint32 = 700004
-	UpdateInterfaceInfoStatusError     uint32 = 700005
-	InterfaceInfoOfflineError          uint32 = 700006
-	SearchTopNInvokeInterfaceInfoError uint32 = 700007
-)
-
-// SDK
-const (
-	SDKNewClientError   uint32 = 600001
-	SDKSendRequestError uint32 = 600002
-)
-
-// UserInterfaceInfo
-
-const (
-	CreateUserInterfaceInfoError           uint32 = 900001
-	SearchUserInterfaceInfoError           uint32 = 900002
-	InvokeSuccessUpdateError               uint32 = 900003
-	InvokeInterfaceLeftNumNonPositiveError uint32 = 900004
-)
-
 // JSON
 const (
 	JSONMarshalError   uint32 = 800001

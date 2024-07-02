@@ -54,30 +54,9 @@ func init() {
 	mapCodMsg[SearchUserByAccessKeyError] = "通过 accessKey 检索用户信息错误"
 	mapCodMsg[AccessKeyNotExistError] = "accessKey 不存在"
 
-	// InterfaceInfo
-	mapCodMsg[AddInterfaceInfoError] = "添加接口信息错误"
-	mapCodMsg[SearchInterfaceInfoPageListError] = "查询接口列表错误"
-	mapCodMsg[SearchInterfaceInfoError] = "查询接口错误"
-	mapCodMsg[UpdateInterfaceInfoError] = "更新接口信息错误"
-	mapCodMsg[DeleteInterfaceInfoError] = "删除接口信息错误"
-	mapCodMsg[UpdateInterfaceInfoStatusError] = "更新接口状态错误"
-	mapCodMsg[InterfaceInfoOfflineError] = "接口未上线错误"
-	mapCodMsg[SearchTopNInvokeInterfaceInfoError] = "搜索调用次数 TopN 的接口信息错误"
-
-	// UserInterfaceInfo
-	mapCodMsg[CreateUserInterfaceInfoError] = "添加用户接口关系信息错误"
-	mapCodMsg[SearchUserInterfaceInfoError] = "查询用户接口关系信息错误"
-	mapCodMsg[InvokeSuccessUpdateError] = "用户接口调用成功更新次数统计错误"
-	mapCodMsg[InvokeInterfaceLeftNumNonPositiveError] = "用户的剩余接口调用次数不大于0"
-
-	// SDK
-	mapCodMsg[SDKNewClientError] = "SDK 创建客户端错误"
-	mapCodMsg[SDKSendRequestError] = "SDK 客户端发起请求错误"
-
 	// JSON
 	mapCodMsg[JSONMarshalError] = "JSON 序列化错误"
 	mapCodMsg[JSONUnmarshalError] = "JSON 反序列化错误"
-
 }
 
 func GetMsgByCode(errCode uint32) string {

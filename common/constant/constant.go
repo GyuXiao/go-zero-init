@@ -3,30 +3,18 @@ package constant
 import "time"
 
 const UserTableName = "user"
-const InterfaceInfoTableName = "interfaceInfo"
-const UserInterfaceInfoTableName = "user_interface_info"
 
 const PatternStr = "/[`~!@#$%^&*()_\\-+=<>?:\"{}|,.\\/;'\\\\[\\]·~！@#￥%……&*（）——\\-+={}|《》？：“”【】、；‘'，。、]/"
 
 const Salt = "gyu"
 
 const (
-	MemberRole     = 0
-	AdminRole      = 1
 	UsernameMinLen = 6
 	PasswordMinLen = 8
 )
 
-// InterfaceInfoStatus
 const (
-	Online  = 1
-	Offline = 0
-)
-
-const (
-	DefaultTopNLimit = 3
-	BlankString      = ""
-	BlankInt         = 0
+	BlankString = ""
 )
 
 // Jwt
@@ -55,8 +43,3 @@ const (
 	PostMethod         = "POST"
 	True               = "true"
 )
-
-// 测试环境的网关 host
-
-const GatewayHost = "http://localhost:8123"
-const GatewayUrl = "/api/invoke"

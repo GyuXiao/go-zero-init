@@ -1,8 +1,8 @@
 -- 创建库
-create database if not exists oj_db;
+create database if not exists db;
 
 -- 切换库
-use oj_db;
+use db;
 
 -- 用户表
 create table if not exists `user`
@@ -10,7 +10,7 @@ create table if not exists `user`
     `id`         bigint                                                                                         not null auto_increment comment '唯一 id' primary key,
     `username`   varchar(256)                                                                                   not null comment '用户昵称',
     `password`   varchar(512)                                                                                   not null comment '用户密码',
-    `avatarUrl`  varchar(1024) default 'https://gyu-pic-bucket.oss-cn-shenzhen.aliyuncs.com/gyustudio_icon.jpg' not null comment '用户头像',
+    `avatarUrl`  varchar(1024) default 'https://xxxx.jpg' not null comment '用户头像',
     `email`      varchar(256)                                                                                   null comment '用户邮箱',
     `phone`      varchar(256)                                                                                   null comment '手机号',
     `userRole`   tinyint       default 0                                                                        not null comment '用户角色 0 - 普通用户 1 - 管理员',

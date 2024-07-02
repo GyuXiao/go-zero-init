@@ -1,14 +1,14 @@
 # 本文件不应该进入版本控制管理
-Name: oj-api-user
+Name: user-api
 Host: 0.0.0.0
 Port: 8001
 #jwtAuth
 Auth:
-  AccessSecret: ae0536f9-6450-4606-8e13-5a19ed505da0
+  AccessSecret: xxxxxx # 依据实际业务填写密钥
   AccessExpire: 604800 # 一周
 
 Log:
-  ServiceName: oj-api-user
+  ServiceName: user-api
   Level: info
 
 Redis:

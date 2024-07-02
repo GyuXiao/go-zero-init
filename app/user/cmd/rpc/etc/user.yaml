@@ -7,8 +7,9 @@ Etcd:
     - 127.0.0.1:2379
   Key: user-rpc
 
+# 使用 MySQL 前记得先改为实际环境中的 name 和 password
 DB:
-  DataSource: root:2288.xzk@tcp(127.0.0.1:3306)/oj_db?charset=utf8mb4&parseTime=True&loc=Local
+  DataSource: yourName:yourPassWord@tcp(127.0.0.1:3306)/db?charset=utf8mb4&parseTime=True&loc=Local
 
 Redis:
   Host: 127.0.0.1:6379
@@ -17,7 +18,7 @@ Redis:
   Key: user-rpc
 
 JwtAuth:
-  AccessSecret: ae0536f9-6450-4606-8e13-5a19ed505da0
+  AccessSecret: xxxxxxx # 依据实际业务填写密钥
   AccessExpire: 604800 # 一周
 
 Log:
