@@ -5,19 +5,18 @@ import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gen"
 	"gorm.io/gorm"
-	"path"
 	"strings"
 )
 
 // 通过以下代码配置，再使用 gorm.io/gen 生成 dao 和 model 的代码
 // 在本目录下执行 go run main.go 即可
-// 成功生成代码后，将目录下的 do 和 entity 文件夹迁移到 app/user/models 目录下
+// 成功生成代码后，将根目录下的 do 和 entity 文件夹迁移到 app/user/models 目录下
 
 var (
 	// 根据本地环境，配置 username，password，dbName，host，port
 	dsn = "username:password@tcp(host:port)/dbName?charset=utf8mb4&parseTime=True&loc=Local"
 	// curd 代码的输出路径
-	outPath = path.Join(".", "app", "user", "cmd", "generate", "do")
+	outPath = "./do"
 	// entity 代码的输出路径
 	modelPkgPath = "entity"
 )
