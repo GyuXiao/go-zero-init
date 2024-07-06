@@ -52,3 +52,7 @@ func ParamErrorResult(r *http.Request, w http.ResponseWriter, err error) {
 	errMsg := fmt.Sprintf("%s： %v", xerr.GetMsgByCode(xerr.RequestParamError), err.Error())
 	httpx.WriteJson(w, http.StatusBadRequest, Error(xerr.ParamFormatError, errMsg))
 }
+
+func JwtUnauthorizedResult(w http.ResponseWriter, r *http.Request, err error) {
+	httpx.WriteJson(w, http.StatusUnauthorized, Error(xerr.UnauthorizedError, xerr.GetMsgByCode(xerr.UnauthorizedError)))
+}

@@ -10,6 +10,7 @@ func init() {
 	mapCodMsg[ServerCommonError] = "服务器开小差啦,稍后再来试一试"
 	mapCodMsg[ParamFormatError] = "参数格式错误"
 	mapCodMsg[RequestParamError] = "参数缺失或不规范"
+	mapCodMsg[UnauthorizedError] = "鉴权失败错误"
 
 	// JWT
 	mapCodMsg[NotLogin] = "未登录"

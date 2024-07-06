@@ -37,6 +37,7 @@ func (l *LoginLogic) Login(req *types.LoginReq) (resp *types.LoginResp, err erro
 		return nil, xerr.NewErrCodeMsg(xerr.RequestParamError, "用户名称包含非法字符")
 	}
 
+	// 调用 rpc 模块的 login
 	loginResp, err := l.svcCtx.UserRpc.Login(l.ctx, &user.LoginReq{
 		Username: req.Username,
 		Password: req.Password,
@@ -45,6 +46,7 @@ func (l *LoginLogic) Login(req *types.LoginReq) (resp *types.LoginResp, err erro
 		return nil, err
 	}
 
+	// 返回登陆响应参数
 	return &types.LoginResp{
 		Id:          loginResp.Id,
 		Username:    loginResp.Username,

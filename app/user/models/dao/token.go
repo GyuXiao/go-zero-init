@@ -1,7 +1,6 @@
-package models
+package dao
 
 import (
-	"context"
 	"github.com/zeromicro/go-zero/core/logc"
 	"github.com/zeromicro/go-zero/core/stores/redis"
 	"go-zero-init/common/constant"
@@ -22,7 +21,6 @@ type TokenService interface {
 
 var tokenService TokenService
 var tokenOnce sync.Once
-var ctx = context.Background()
 
 type defaultTokenModel struct {
 	*redis.Redis

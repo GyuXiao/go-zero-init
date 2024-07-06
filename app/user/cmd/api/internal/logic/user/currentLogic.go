@@ -26,12 +26,16 @@ func NewCurrentLogic(ctx context.Context, svcCtx *svc.ServiceContext) *CurrentLo
 }
 
 func (l *CurrentLogic) Current(req *types.CurrentUserReq) (resp *types.CurrentUserResp, err error) {
+	// 获取 JWT token
 	token := strings.Split(req.Authorization, " ")[1]
+
+	// 调用 rpc 模块的 current
 	currentResp, err := l.svcCtx.UserRpc.CurrentUser(l.ctx, &user.CurrentUserReq{AuthToken: token})
 	if err != nil {
 		return nil, err
 	}
 
+	// 返回响应参数
 	return &types.CurrentUserResp{
 		Id:          currentResp.Id,
 		Username:    currentResp.Username,

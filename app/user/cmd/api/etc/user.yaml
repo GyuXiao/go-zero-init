@@ -4,7 +4,7 @@ Host: 0.0.0.0
 Port: 8001
 #jwtAuth
 Auth:
-  AccessSecret: xxxxxx # 依据实际业务填写密钥
+  AccessSecret: xxxxxxxx # 依据实际业务填写密钥，并保证和 rpc 模块的设置一致
   AccessExpire: 604800 # 一周
 
 Log:

@@ -2,7 +2,7 @@ package userlogic
 
 import (
 	"context"
-	"go-zero-init/app/user/models"
+	"go-zero-init/app/user/models/dao"
 
 	"go-zero-init/app/user/cmd/rpc/internal/svc"
 	"go-zero-init/app/user/cmd/rpc/pb"
@@ -25,10 +25,11 @@ func NewLogoutLogic(ctx context.Context, svcCtx *svc.ServiceContext) *LogoutLogi
 }
 
 func (l *LogoutLogic) Logout(in *pb.LogoutReq) (*pb.LogoutResp, error) {
-	tokenLogic := models.NewDefaultTokenModel(l.svcCtx.RedisClient)
+	tokenLogic := dao.NewDefaultTokenModel(l.svcCtx.RedisClient)
 	err := tokenLogic.DeleteToken(in.AuthToken)
 	if err != nil {
 		return nil, err
 	}
+
 	return &pb.LogoutResp{IsLogouted: true}, nil
 }

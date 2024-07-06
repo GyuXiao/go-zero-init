@@ -3,6 +3,9 @@ package main
 import (
 	"flag"
 	"fmt"
+	"go-zero-init/common/constant"
+	"go-zero-init/common/result"
+	"net/http"
 
 	"go-zero-init/app/user/cmd/api/internal/config"
 	"go-zero-init/app/user/cmd/api/internal/handler"
@@ -20,7 +23,9 @@ func main() {
 	var c config.Config
 	conf.MustLoad(*configFile, &c)
 
-	server := rest.MustNewServer(c.RestConf)
+	server := rest.MustNewServer(c.RestConf,
+		rest.WithCustomCors(nil, func(w http.ResponseWriter) {}, constant.AllOrigins),
+		rest.WithUnauthorizedCallback(result.JwtUnauthorizedResult))
 	defer server.Stop()
 
 	ctx := svc.NewServiceContext(c)

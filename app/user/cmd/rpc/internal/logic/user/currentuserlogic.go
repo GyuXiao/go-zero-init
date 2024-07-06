@@ -2,7 +2,7 @@ package userlogic
 
 import (
 	"context"
-	"go-zero-init/app/user/models"
+	"go-zero-init/app/user/models/dao"
 	"go-zero-init/common/constant"
 	"go-zero-init/common/xerr"
 	"strconv"
@@ -29,15 +29,16 @@ func NewCurrentUserLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Curre
 
 func (l *CurrentUserLogic) CurrentUser(in *pb.CurrentUserReq) (*pb.CurrentUserResp, error) {
 	// 校验从 jwt token 解析出来的 userId 是否和缓存中的 userId 一致
-	// 1，从 token 中解析出 userId1
+	// 1, 从 token 中解析出 userId1
 	generateTokenLogic := NewGenerateTokenLogic(l.ctx, l.svcCtx)
 	claims, err := generateTokenLogic.ParseTokenByKey(in.AuthToken, l.svcCtx.Config.JwtAuth.AccessSecret)
 	if err != nil {
 		return nil, err
 	}
 	userId1 := claims[constant.KeyJwtUserId].(float64)
-	// 2，从 根据 token 从 redis 中拿到 userId2
-	tokenLogic := models.NewDefaultTokenModel(l.svcCtx.RedisClient)
+
+	// 2, 从 根据 token 从 redis 中拿到 userId2
+	tokenLogic := dao.NewDefaultTokenModel(l.svcCtx.RedisClient)
 	result, err := tokenLogic.CheckTokenExist(in.AuthToken)
 	if err != nil {
 		return nil, err
@@ -51,12 +52,14 @@ func (l *CurrentUserLogic) CurrentUser(in *pb.CurrentUserReq) (*pb.CurrentUserRe
 	if err != nil {
 		return nil, err
 	}
-	// 3，判断两者是否相同
+
+	// 3, 判断两者是否相同
 	if uint64(userId1) != uint64(userId2) {
 		return nil, xerr.NewErrCode(xerr.UserNotLoginError)
 	}
 	// 校验成功后，刷新 token
 	tokenLogic.RefreshToken(in.AuthToken)
+
 	return &pb.CurrentUserResp{
 		Id:          uint64(userId1),
 		Username:    username,

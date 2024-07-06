@@ -37,6 +37,7 @@ func (l *RegisterLogic) Register(req *types.RegisterReq) (resp *types.RegisterRe
 		return nil, xerr.NewErrCodeMsg(xerr.RequestParamError, "用户名称包含非法字符")
 	}
 
+	// 调用 rpc 模块的 register
 	registerResp, err := l.svcCtx.UserRpc.Register(l.ctx, &user.RegisterReq{
 		Username:        req.Username,
 		Password:        req.Password,
@@ -46,6 +47,6 @@ func (l *RegisterLogic) Register(req *types.RegisterReq) (resp *types.RegisterRe
 		return nil, err
 	}
 
-	// 注册成功，返回用户名
+	// 返回响应参数
 	return &types.RegisterResp{Username: registerResp.Username}, nil
 }

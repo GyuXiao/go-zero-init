@@ -2,11 +2,7 @@ package constant
 
 import "time"
 
-const UserTableName = "user"
-
 const PatternStr = "/[`~!@#$%^&*()_\\-+=<>?:\"{}|,.\\/;'\\\\[\\]·~！@#￥%……&*（）——\\-+={}|《》？：“”【】、；‘'，。、]/"
-
-const Salt = "gyu"
 
 const (
 	UsernameMinLen = 6
@@ -31,15 +27,7 @@ const KeyUsername = "username"
 const KeyAvatarUrl = "avatar_url"
 
 // CORS
+
 const (
-	AllowOrigin        = "Access-Control-Allow-Origin"
-	AllOrigins         = "*"
-	AllowMethods       = "Access-Control-Allow-Methods"
-	AllowHeaders       = "Access-Control-Allow-Headers"
-	AllowCredentials   = "Access-Control-Allow-Credentials"
-	AllowExposeHeaders = "Access-Control-Expose-Headers"
-	Headers            = "Content-Type, Content-Length, Origin, Access-Control-Allow-Origin, Access-Control-Allow-Headers"
-	Methods            = "GET, OPTIONS, POST, PATCH, PUT, DELETE"
-	PostMethod         = "POST"
-	True               = "true"
+	AllOrigins = "*"
 )

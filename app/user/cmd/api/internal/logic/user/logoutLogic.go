@@ -26,11 +26,15 @@ func NewLogoutLogic(ctx context.Context, svcCtx *svc.ServiceContext) *LogoutLogi
 }
 
 func (l *LogoutLogic) Logout(req *types.LogoutReq) (resp *types.LogoutResp, err error) {
+	// 获取 JWT token
 	token := strings.Split(req.Authorization, " ")[1]
+
+	// 调用 rpc 模块的 logout
 	logoutResp, err := l.svcCtx.UserRpc.Logout(l.ctx, &user.LogoutReq{AuthToken: token})
 	if err != nil {
 		return nil, err
 	}
 
+	// 返回响应参数
 	return &types.LogoutResp{IsLogouted: logoutResp.IsLogouted}, nil
 }

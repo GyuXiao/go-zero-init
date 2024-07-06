@@ -1,8 +1,8 @@
 -- 创建库
-create database if not exists db;
+create database if not exists init_db;
 
 -- 切换库
-use db;
+use init_db;
 
 -- 用户表
 create table if not exists `user`
